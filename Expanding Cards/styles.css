@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Muli', sans-serif;
+    overflow: hidden;
+    background-color: antiquewhite;
+}
+
+h1{
+    text-align: center;
+    margin: 5rem;
+    font-size: 5rem;
+    color: black;
+}
+
+.main-container{
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    height: 100vh;
+    margin: 0;
+}
+
+.container{
+    display: flex;
+    width: 90vw;
+    /* height: 60vh; */
+}
+
+.panel{
+    background-size: cover 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 60vh;
+    border-radius: 50px;
+    color: white;
+    cursor: pointer;
+    /* overflow:; */
+    flex: 0.5;
+    margin: 0 10px;
+    position: relative; /* Position is set to be relative because we want the h3 to be absolute as we want the text to be at the bottom */
+    transition: flex 0.7s ease-in;
+
+}
+
+h3{
+    font-size: 24px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin:0;
+    opacity: 0;
+}
+
+.panel.active{
+    flex: 4;
+}
+
+.panel.active h3{
+    opacity: 1;
+}
+
+
+@media(max-width: 500px) {
+    .container{
+        width: 100vw;
+
+    }
+
+    .panel:nth-of-type(4), .panel:nth-of-type(5){
+        display: none;
+    }
+}
+
